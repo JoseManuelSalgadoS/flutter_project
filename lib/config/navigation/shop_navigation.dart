@@ -1,4 +1,5 @@
 import 'package:first_project_learningb/modules/shop/adapters/screens/shop.dart';
+import 'package:first_project_learningb/modules/shop/adapters/screens/shop_detail.dart';
 import 'package:flutter/material.dart';
 
 class ShopNavigation extends StatelessWidget {
@@ -9,7 +10,9 @@ class ShopNavigation extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       initialRoute: '/shop',
-      routes: {'/shop': (context) => const Shop()},
+      routes: {'/shop': (context) => const Shop(),
+      '/shop/detail-shop': (context) => const ShopDetail()
+      },
     );
   }
   

@@ -7,6 +7,12 @@ class Shop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Map<String, dynamic> item = {
+      'title': 'Samsung Galaxy Ultra S23',
+      'description': 'Nuevo Samsung Galaxy S23 Ultra aaaaaaaaaaaaaaaaaaaaa',
+      'initialRating': 4.5,
+      'imageUrl': 'assets/images/logo-utez.png'
+    };
     return Scaffold(
       appBar: AppBar(
         title: const Text('Tienda'),
@@ -15,13 +21,23 @@ class Shop extends StatelessWidget {
         ),
         body: GridView.count(
           primary: false,
-          padding: const EdgeInsets.all(20),
-          crossAxisSpacing: 10,
+          padding: const EdgeInsets.all(8),
+          crossAxisSpacing: 8,
           mainAxisSpacing: 10,
           crossAxisCount: 2,
-          children: const <Widget>[
-              ContainerShop(),
-              ContainerShop()
+          children:  <Widget>[
+              ContainerShop(
+                title: item['title'],
+                description: item['description'],
+                initialRating: item['initialRating'],
+                imageUrl: item['imageUrl'],
+              ),
+              ContainerShop(
+                title: item['title'],
+                description: item['description'],
+                initialRating: item['initialRating'],
+                imageUrl: item['imageUrl'],
+              )
           ],
         ),
       );
