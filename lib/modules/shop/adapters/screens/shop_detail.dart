@@ -35,7 +35,8 @@ class ShopDetail extends StatelessWidget {
                     width: 180,
                     child: Text(
                       title,
-                      style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                      style:
+                          TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
                     ),
                   ),
                   const Spacer(),
@@ -67,6 +68,19 @@ class ShopDetail extends StatelessWidget {
           ],
         ),
       ),
+      floatingActionButton: ElevatedButton(
+        onPressed: () {},
+        style: OutlinedButton.styleFrom(
+          foregroundColor: ColorsApp.successColor,
+          backgroundColor: Colors.white,
+          side: const BorderSide(color: ColorsApp.successColor),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16),
+          ),
+        ),
+        child: const Text('Agregar al carrito'),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }

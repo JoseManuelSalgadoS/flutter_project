@@ -24,4 +24,5 @@ flutter:
   assets:
     - assets/images/
     - assets/images/macbook.jpg
+    - assets/images/iphone.jpg
 
