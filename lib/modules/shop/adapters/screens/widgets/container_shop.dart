@@ -8,11 +8,13 @@ class ContainerShop extends StatelessWidget {
       required this.title,
       required this.description,
       required this.initialRating,
-      required this.imageUrl});
+      required this.imageUrl,
+      required this.price});
   final String title;
   final String description;
   final double initialRating;
   final String imageUrl;
+  final double price;
 
   @override
   Widget build(BuildContext context) {
@@ -36,20 +38,29 @@ class ContainerShop extends StatelessWidget {
                   ),
                 ),
                 const Spacer(),
-                RatingBar.builder(
-                  initialRating: initialRating,
-                  minRating: 1,
-                  direction: Axis.horizontal,
-                  allowHalfRating: true,
-                  itemCount: 5,
-                  itemSize: 8,
-                  itemPadding: const EdgeInsets.symmetric(horizontal: 4.0),
-                  itemBuilder: (context, _) => const Icon(
-                    Icons.star,
-                    color: Colors.amber,
-                  ),
-                  onRatingUpdate: (rating) {},
-                  ignoreGestures: true,
+                Column(
+                  children: [
+                    Text(
+                      '\$ $price',
+                      style: const TextStyle(
+                          fontSize: 10, fontWeight: FontWeight.bold),
+                    ),
+                    RatingBar.builder(
+                      initialRating: initialRating,
+                      minRating: 1,
+                      direction: Axis.horizontal,
+                      allowHalfRating: true,
+                      itemCount: 5,
+                      itemSize: 8,
+                      itemPadding: const EdgeInsets.symmetric(horizontal: 4.0),
+                      itemBuilder: (context, _) => const Icon(
+                        Icons.star,
+                        color: Colors.amber,
+                      ),
+                      onRatingUpdate: (rating) {},
+                      ignoreGestures: true,
+                    ),
+                  ],
                 )
               ],
             ),
@@ -70,7 +81,8 @@ class ContainerShop extends StatelessWidget {
                 'title': title,
                 'description': description,
                 'initialRating': initialRating,
-                'imageUrl': imageUrl
+                'imageUrl': imageUrl,
+                'price': price
               });
             },
             style: OutlinedButton.styleFrom(

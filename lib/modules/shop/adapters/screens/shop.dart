@@ -1,4 +1,5 @@
 import 'package:first_project_learningb/kernel/colors/colors_app.dart';
+import 'package:first_project_learningb/modules/shop/adapters/screens/widgets/access_shop_cart.dart';
 import 'package:first_project_learningb/modules/shop/adapters/screens/widgets/container_shop.dart';
 import 'package:flutter/material.dart';
 
@@ -11,13 +12,15 @@ class Shop extends StatelessWidget {
       'title': 'Samsung Galaxy Ultra S23',
       'description': 'Nuevo Samsung Galaxy S23 Ultra descubre todo lo nuevo que tiene este dispositivo',
       'initialRating': 4.5,
-      'imageUrl': 'assets/images/logo-utez.png'
+      'imageUrl': 'assets/images/logo-utez.png',
+      'price': 22000.00
     };
     final Map<String, dynamic> item2 = {
       'title': 'iPhone 15 Pro Max',
       'description': 'Nuevo iPhone 15 Pro Max descubre todo lo nuevo que tiene este dispositivo',
       'initialRating': 4.0,
-      'imageUrl': 'assets/images/iphone.jpg'
+      'imageUrl': 'assets/images/iphone.jpg',
+      'price': 22000.00
     };
     final List items = [item, item2];
     return Scaffold(
@@ -25,6 +28,9 @@ class Shop extends StatelessWidget {
         title: const Text('Tienda'),
         backgroundColor: ColorsApp.primaryColor,
         foregroundColor: Colors.white,
+        actions: const [
+          AccessShopCart()
+        ],
         ),
         body: GridView.count(
           primary: false,
@@ -38,6 +44,7 @@ class Shop extends StatelessWidget {
                 description: items[index]['description'],
                 initialRating: items[index]['initialRating'],
                 imageUrl: items[index]['imageUrl'],
+                price: items[index]['price'],
               );
           })
         ),
@@ -45,3 +52,4 @@ class Shop extends StatelessWidget {
   }
   
 }
+
